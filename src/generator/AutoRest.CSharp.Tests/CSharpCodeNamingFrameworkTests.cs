@@ -3,7 +3,6 @@
 
 using System.Globalization;
 using System.Linq;
-using System.Reflection.Metadata;
 using AutoRest.Core;
 using AutoRest.Core.ClientModel;
 using AutoRest.CSharp.TemplateModels;
@@ -301,8 +300,8 @@ namespace AutoRest.CSharp.Tests
                 InputParameter = method.Parameters[0],
                 OutputParameterProperty = "A"
             });
-            method.InputParameterTransformation[0].ParameterMappings.Add(new ParameterMapping 
-            { 
+            method.InputParameterTransformation[0].ParameterMappings.Add(new ParameterMapping
+            {
                 InputParameter = method.Parameters[1],
                 OutputParameterProperty = "B"
             });
@@ -465,7 +464,7 @@ namespace AutoRest.CSharp.Tests
                 InputParameter = inputParameter,
                 InputParameterProperty = "ProvState",
                 OutputParameterProperty = "Property.ProvState"
-            });            
+            });
 
             MethodTemplateModel templateModel = new MethodTemplateModel(method, serviceClient,SyncMethodsGenerationMode.All);
             var output = templateModel.BuildInputMappings();

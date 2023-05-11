@@ -5,7 +5,6 @@ using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Rest;
 
 namespace Microsoft.Rest.ClientRuntime.Azure.Test.Fakes
 {

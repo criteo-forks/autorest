@@ -6,14 +6,11 @@ using System.Globalization;
 using System.Runtime.Serialization;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Microsoft.Rest;
-#if !PORTABLE
-using System.Security.Permissions;
-#endif
 
 namespace Microsoft.Rest.Azure.Authentication
 {
     /// <summary>
-    /// Authentication exception for Microsoft Rest Client for Azure. 
+    /// Authentication exception for Microsoft Rest Client for Azure.
     /// </summary>
 #if !PORTABLE
     [Serializable]
@@ -43,7 +40,7 @@ namespace Microsoft.Rest.Azure.Authentication
         /// </summary>
         /// <param name="message">Exception message.</param>
         /// <param name="innerException">Inner exception.</param>
-        public AuthenticationException(string message, Exception innerException) 
+        public AuthenticationException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
@@ -53,36 +50,9 @@ namespace Microsoft.Rest.Azure.Authentication
         /// </summary>
         /// <param name="message">The exception message</param>
         /// <param name="innerException">The inner AdalException with additional details</param>
-        internal AuthenticationException(string message, AdalException innerException) : 
+        internal AuthenticationException(string message, AdalException innerException) :
             base(string.Format(CultureInfo.CurrentCulture, message, innerException.Message), innerException)
         {
         }
-
-#if !PORTABLE
-        /// <summary>
-        /// Initializes a new instance of the AuthenticationException class.
-        /// </summary>
-        /// <param name="info">Serialization info.</param>
-        /// <param name="context">Streaming context.</param>
-        protected AuthenticationException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-        }
-
-        /// <summary>
-        /// Serializes content of the exception.
-        /// </summary>
-        /// <param name="info">Serialization info.</param>
-        /// <param name="context">Streaming context.</param>
-        [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-            if (info == null)
-            {
-                throw new ArgumentNullException("info");
-            }
-        }
-#endif
     }
 }

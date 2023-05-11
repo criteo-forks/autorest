@@ -14,7 +14,6 @@ namespace Microsoft.Azure.Management.DataLake.Analytics.Models
     using Newtonsoft.Json;
     using Microsoft.Rest;
     using Microsoft.Rest.Serialization;
-    using Microsoft.Rest.Azure;
 
     /// <summary>
     /// The common Data Lake Analytics job properties.
