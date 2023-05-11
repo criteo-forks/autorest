@@ -12,7 +12,7 @@ Supported Platforms:
     <AssemblyTitle>Client Runtime Library for Microsoft AutoRest Generated Clients</AssemblyTitle>
     <VersionPrefix>2.3.2</VersionPrefix>
     <Authors>Microsoft</Authors>
-    <TargetFrameworks>net45;netstandard1.1;netstandard1.5</TargetFrameworks>
+    <TargetFrameworks>net45;netstandard1.1</TargetFrameworks>
     <PublicSign>true</PublicSign>
     <AssemblyName>Microsoft.Rest.ClientRuntime</AssemblyName>
     <AssemblyOriginatorKeyFile>../../../Tools/MSSharedLibKey.snk</AssemblyOriginatorKeyFile>
@@ -24,7 +24,6 @@ Supported Platforms:
     <PackageLicenseUrl>https://raw.githubusercontent.com/Microsoft/dotnet/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netstandard1.1' ">$(PackageTargetFallback);dnxcore50;portable-net45+win8</PackageTargetFallback>
-    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netstandard1.5' ">$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
@@ -50,23 +49,23 @@ Supported Platforms:
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.1' ">
     <PackageReference Include="Newtonsoft.Json" Version="[9.0.1,10.0)" />
-    <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.0.2" />
-    <PackageReference Include="System.Collections" Version="4.0.11" />
-    <PackageReference Include="System.Diagnostics.Debug" Version="4.0.11" />
-    <PackageReference Include="System.Diagnostics.Tools" Version="4.0.1" />
-    <PackageReference Include="System.Diagnostics.Tracing" Version="4.1.0" />
-    <PackageReference Include="System.Globalization" Version="4.0.11" />
-    <PackageReference Include="System.Linq" Version="4.1.0" />
-    <PackageReference Include="System.Linq.Expressions" Version="4.1.0" />
-    <PackageReference Include="System.Net.Http" Version="4.1.1" />
-    <PackageReference Include="System.Net.Primitives" Version="4.0.11" />
-    <PackageReference Include="System.ObjectModel" Version="4.0.12" />
-    <PackageReference Include="System.Reflection.Extensions" Version="4.0.1" />
-    <PackageReference Include="System.Resources.ResourceManager" Version="4.0.1" />
-    <PackageReference Include="System.Runtime.Extensions" Version="4.1.0" />
-    <PackageReference Include="System.Text.RegularExpressions" Version="4.1.0" />
-    <PackageReference Include="System.Threading" Version="4.0.11" />
-    <PackageReference Include="System.Xml.ReaderWriter" Version="4.0.11" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+    <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0" />
+    <PackageReference Include="System.Diagnostics.Tools" Version="4.3.0" />
+    <PackageReference Include="System.Diagnostics.Tracing" Version="4.3.0" />
+    <PackageReference Include="System.Globalization" Version="4.3.0" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.0" />
+    <PackageReference Include="System.Net.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.ObjectModel" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.0" />
+    <PackageReference Include="System.Threading" Version="4.3.0" />
+    <PackageReference Include="System.Xml.ReaderWriter" Version="4.3.0" />
   </ItemGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
@@ -76,26 +75,5 @@ Supported Platforms:
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.1' ">
     <DefineConstants>$(DefineConstants);PORTABLE</DefineConstants>
   </PropertyGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.5' ">
-    <PackageReference Include="Newtonsoft.Json" Version="[9.0.1,10.0)" />
-    <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.0.2" />
-    <PackageReference Include="System.Collections" Version="4.0.11" />
-    <PackageReference Include="System.Diagnostics.Debug" Version="4.0.11" />
-    <PackageReference Include="System.Diagnostics.Tools" Version="4.0.1" />
-    <PackageReference Include="System.Diagnostics.Tracing" Version="4.1.0" />
-    <PackageReference Include="System.Globalization" Version="4.0.11" />
-    <PackageReference Include="System.Linq" Version="4.1.0" />
-    <PackageReference Include="System.Linq.Expressions" Version="4.1.0" />
-    <PackageReference Include="System.Net.Http" Version="4.1.1" />
-    <PackageReference Include="System.Net.Primitives" Version="4.0.11" />
-    <PackageReference Include="System.ObjectModel" Version="4.0.12" />
-    <PackageReference Include="System.Reflection.Extensions" Version="4.0.1" />
-    <PackageReference Include="System.Resources.ResourceManager" Version="4.0.1" />
-    <PackageReference Include="System.Runtime.Extensions" Version="4.1.0" />
-    <PackageReference Include="System.Text.RegularExpressions" Version="4.1.0" />
-    <PackageReference Include="System.Threading" Version="4.0.11" />
-    <PackageReference Include="System.Xml.ReaderWriter" Version="4.0.11" />
-  </ItemGroup>
 
 </Project>

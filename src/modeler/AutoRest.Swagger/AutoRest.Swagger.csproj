@@ -26,7 +26,7 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="[9.0.1,10.0)" />
-    <PackageReference Include="System.Threading.Tasks" Version="4.0.11" />
+    <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
