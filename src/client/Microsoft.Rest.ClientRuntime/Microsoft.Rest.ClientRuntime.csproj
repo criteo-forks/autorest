@@ -36,7 +36,7 @@ Supported Platforms:
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Net" />
@@ -48,7 +48,7 @@ Supported Platforms:
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.1' ">
-    <PackageReference Include="Newtonsoft.Json" Version="[9.0.1,10.0)" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
     <PackageReference Include="System.Collections" Version="4.3.0" />
     <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0" />

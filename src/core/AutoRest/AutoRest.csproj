@@ -3,7 +3,7 @@
   <PropertyGroup>
     <VersionPrefix>0.17.1</VersionPrefix>
     <Authors>Microsoft;Azure-SDK</Authors>
-    <TargetFrameworks>net451;netcoreapp2.1</TargetFrameworks>
+    <TargetFrameworks>net451;net6.0</TargetFrameworks>
     <PublicSign>true</PublicSign>
     <AssemblyName>AutoRest</AssemblyName>
     <OutputType>Exe</OutputType>
@@ -63,7 +63,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="[9.0.1,10.0)">
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
   </ItemGroup>
