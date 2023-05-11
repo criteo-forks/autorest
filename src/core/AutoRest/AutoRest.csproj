@@ -3,7 +3,7 @@
   <PropertyGroup>
     <VersionPrefix>0.17.1</VersionPrefix>
     <Authors>Microsoft;Azure-SDK</Authors>
-    <TargetFramework>net451</TargetFramework>
+    <TargetFrameworks>net451;netcoreapp2.1</TargetFrameworks>
     <PublicSign>true</PublicSign>
     <AssemblyName>AutoRest</AssemblyName>
     <OutputType>Exe</OutputType>
