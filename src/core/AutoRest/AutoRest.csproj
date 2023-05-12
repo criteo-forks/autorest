@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <VersionPrefix>0.17.1</VersionPrefix>
+    <VersionPrefix>0.18.1</VersionPrefix>
     <Authors>Microsoft;Azure-SDK</Authors>
-    <TargetFrameworks>net451;net6.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.1;net6.0</TargetFrameworks>
     <PublicSign>true</PublicSign>
     <AssemblyName>AutoRest</AssemblyName>
     <OutputType>Exe</OutputType>
@@ -30,10 +30,6 @@
     </None>
     <None Update="Autorest.Release.json">
       <PackagePath>tools</PackagePath>
-      <Pack>true</Pack>
-    </None>
-    <None Update="bin\release\net451\win7-x64\*.exe;bin\release\net451\win7-x64\*.dll">
-      <PackagePath>tools/</PackagePath>
       <Pack>true</Pack>
     </None>
     <None Update="**\*.pdb">
@@ -66,11 +62,6 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 
 </Project>
