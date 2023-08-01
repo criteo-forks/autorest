@@ -56,7 +56,7 @@ namespace AutoRest.Swagger
                 Name = methodName,
                 SerializedName = _operation.OperationId
             };
-            
+
             method.RequestContentType = _effectiveConsumes.FirstOrDefault() ?? APP_JSON_MIME;
             string produce = _effectiveConsumes.FirstOrDefault(s => s.StartsWith(APP_JSON_MIME, StringComparison.OrdinalIgnoreCase));
             if (!string.IsNullOrEmpty(produce))
@@ -176,7 +176,7 @@ namespace AutoRest.Swagger
 
         private void BuildMethodParameters(Method method)
         {
-            foreach (var swaggerParameter in DeduplicateParameters(_operation.Parameters))
+            foreach (var swaggerParameter in ReorderParameters(DeduplicateParameters(_operation.Parameters)))
             {
                 var parameter = ((ParameterBuilder)swaggerParameter.GetBuilder(_swaggerModeler)).Build();
                 method.Parameters.Add(parameter);
@@ -191,6 +191,34 @@ namespace AutoRest.Swagger
                         string.Format(CultureInfo.InvariantCulture, "{{{0}}}", parameterName);
                 }
             }
+        }
+
+        private class ParameterWithPosition
+        {
+            public SwaggerParameter Parameter { get; set; }
+            public long? Position { get; set; }
+        };
+
+        /// <summary>
+        /// Reorder properties according to 'x-position' extension
+        /// </summary>
+        private static IEnumerable<SwaggerParameter> ReorderParameters(IEnumerable<SwaggerParameter> parameters)
+        {
+
+            var parametersWithPositions = parameters.Select(p =>
+            {
+                long? pos = null;
+                if (p.Extensions.TryGetValue("x-position", out var position))
+                {
+                    pos = (long)position;
+                }
+                return new ParameterWithPosition { Parameter = p, Position = pos };
+            }).ToList();
+            if (!parametersWithPositions.All(pp => pp.Position.HasValue))
+                return parameters;
+            var orderedProperties = parametersWithPositions.OrderBy(pp => pp.Position.Value).Select(pp => pp.Parameter);
+
+            return orderedProperties;
         }
 
         private List<Stack<IType>> BuildResponses(Method method, CompositeType headerType)
